@@ -16,10 +16,8 @@ const constraints = {
 	}
 }
 
-alert('Script started')
 navigator.mediaDevices.getUserMedia(constraints).then(stream => {
 	video.srcObject = stream
-	alert('Media device opened')
 	video.onloadedmetadata = () => {
 		//width = video.videoWidth
 		//height = video.videoHeight
@@ -44,18 +42,5 @@ navigator.mediaDevices.getUserMedia(constraints).then(stream => {
 			ctx.drawImage(video, 0, 0, width, height)
 		})
 		document.body.append(takessbtn)
-
-		alert('Loading finished')
 	}
 })
-
-
-
-function takeSnapshot() { }
-
-// var ctx = document.getElementById('canvas').getContext('2d')
-// ctx.moveTo(0, 0)
-// ctx.lineTo(500, 300)
-// ctx.stroke()
-
-//document.body.appendChild(video)
