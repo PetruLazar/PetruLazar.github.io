@@ -32,6 +32,5 @@ function speechEnd() {
 
 recognition.onresult = function (event) {
 	speech.innerHTML = event.results[0][0].transcript
-	accuracy.innerHTML = 'Accuracy: ' + (int(event.results[0][0].confidence * 1000) / 10) + '%'
+	accuracy.innerHTML = 'Accuracy: ' + (Math.round(event.results[0][0].confidence * 1000) / 10) + '%'
 }
-
